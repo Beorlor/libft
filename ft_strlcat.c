@@ -6,7 +6,7 @@
 /*   By: jedurand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:23:15 by jedurand          #+#    #+#             */
-/*   Updated: 2023/10/02 12:23:16 by jedurand         ###   ########.fr       */
+/*   Updated: 2023/10/03 10:43:40 by jedurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
+	if (size == 0)
+		return (ft_strlen(src));
 	while (dest[i] && i < size)
 		i++;
 	while (src[j] && (i + j) < size - 1)

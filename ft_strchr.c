@@ -6,7 +6,7 @@
 /*   By: jedurand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:23:26 by jedurand          #+#    #+#             */
-/*   Updated: 2023/10/02 12:53:18 by jedurand         ###   ########.fr       */
+/*   Updated: 2023/10/03 11:03:04 by jedurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *str, int c)
 			return (ptr);
 		ptr++;
 	}
-	if (c == 0)
+	if ((char)c == 0)
 		return (ptr);
 	return (NULL);
 }
@@ -33,6 +33,6 @@ int	main(void)
 {
 	char str[6] = "salut";
 	printf("%p\n", str);
-	printf("%p", ft_strchr(str, 'l'));
+	printf("%p", ft_strchr(str, 1024));
 	return (0);
 }*/

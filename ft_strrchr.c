@@ -6,7 +6,7 @@
 /*   By: jedurand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:22:35 by jedurand          #+#    #+#             */
-/*   Updated: 2023/10/02 13:00:41 by jedurand         ###   ########.fr       */
+/*   Updated: 2023/10/03 11:03:18 by jedurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *str, int c)
 			ptr = (char *)str;
 		str++;
 	}
-	if (c == 0)
+	if ((char)c == 0)
 		return ((char *)str);
 	return (ptr);
 }

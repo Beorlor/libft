@@ -6,13 +6,13 @@
 /*   By: jedurand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 17:01:46 by jedurand          #+#    #+#             */
-/*   Updated: 2023/10/02 17:08:13 by jedurand         ###   ########.fr       */
+/*   Updated: 2023/10/03 11:55:44 by jedurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_allocate(char **tab, char const *s, char sep)
+static int	ft_allocate(char **tab, char const *s, char sep, size_t *h_error)
 {
 	char		**tab_p;
 	char const	*tmp;
@@ -29,11 +29,15 @@ static void	ft_allocate(char **tab, char const *s, char sep)
 		if (*tmp == sep || tmp > s)
 		{
 			*tab_p = ft_substr(s, 0, tmp - s);
+			if (!*tab_p)
+				return (0);
 			s = tmp;
 			tab_p++;
+			(*h_error)++;
 		}
 	}
 	*tab_p = NULL;
+	return (1);
 }
 
 static int	ft_count_words(char const *s, char sep)
@@ -57,14 +61,26 @@ char	**ft_split(char const *s, char c)
 {
 	char	**new;
 	int		size;
+	size_t	h_error;
 
 	if (!s)
 		return (NULL);
+	h_error = 0;
 	size = ft_count_words(s, c);
 	new = (char **)malloc(sizeof(char *) * (size + 1));
 	if (!new)
 		return (NULL);
-	ft_allocate(new, s, c);
+	new[size] = 0;
+	if (!ft_allocate(new, s, c, &h_error))
+	{
+		while (h_error > 0)
+		{
+			free(new[h_error - 1]);
+			h_error--;
+		}
+		free(new);
+		return (NULL);
+	}
 	return (new);
 }
 
