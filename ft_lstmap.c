@@ -6,7 +6,7 @@
 /*   By: jedurand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:40:27 by jedurand          #+#    #+#             */
-/*   Updated: 2023/10/03 14:56:32 by jedurand         ###   ########.fr       */
+/*   Updated: 2023/10/03 16:13:34 by jedurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*head;
 	t_list	*tmp;
+	void	*new_content;
 
 	head = NULL;
 	while (lst)
 	{
-		tmp = ft_lstnew((*f)(lst -> content));
+		new_content = (*f)(lst->content);
+		tmp = ft_lstnew(new_content);
 		if (!tmp)
 		{
+			del(new_content);
 			ft_lstclear(&head, del);
 			return (NULL);
 		}
