@@ -6,7 +6,7 @@
 /*   By: jedurand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:25:17 by jedurand          #+#    #+#             */
-/*   Updated: 2023/10/03 14:59:32 by jedurand         ###   ########.fr       */
+/*   Updated: 2023/10/04 10:35:49 by jedurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 typedef struct s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
 

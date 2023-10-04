@@ -6,7 +6,7 @@
 /*   By: jedurand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:59:53 by jedurand          #+#    #+#             */
-/*   Updated: 2023/10/03 17:07:59 by jedurand         ###   ########.fr       */
+/*   Updated: 2023/10/04 10:39:04 by jedurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_lstsize(t_list *lst)
 	while (lst)
 	{
 		lst = lst-> next;
-		++i;
+		i++;
 	}
 	return (i);
 }
@@ -36,20 +36,3 @@ int	main(void)
 	printf("%d", ft_lstsize(l3));
 	return (0);
 }*/
-
-#include <stdio.h>
-int	main(void)
-{
-	 	t_list *l;
- 	int actual;
- 	int expected;
-
- 	l = ft_lstnew(ft_strdup("1"));
- 	l->next = ft_lstnew(ft_strdup("2"));
- 	l->next->next = ft_lstnew(ft_strdup("3"));
- 	expected = 3;
- 	actual = ft_lstsize(l);
- 	if (actual == expected)
- 		printf("TEST_SUCCESS");
- 	printf("TEST_FAILED");
-}
