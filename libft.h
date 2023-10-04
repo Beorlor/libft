@@ -6,14 +6,13 @@
 /*   By: jedurand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:25:17 by jedurand          #+#    #+#             */
-/*   Updated: 2023/10/04 10:35:49 by jedurand         ###   ########.fr       */
+/*   Updated: 2023/10/04 11:18:21 by jedurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>

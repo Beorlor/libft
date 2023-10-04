@@ -6,11 +6,11 @@
 #    By: jedurand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 15:21:52 by jedurand          #+#    #+#              #
-#    Updated: 2023/10/03 15:22:12 by jedurand         ###   ########.fr        #
+#    Updated: 2023/10/04 11:30:55 by jedurand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
- NAME = libft.a
+NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
@@ -35,8 +35,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
+bonus: $(OBJS_BONUS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS_BONUS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
